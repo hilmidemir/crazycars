@@ -9,7 +9,7 @@ export const sample_cars: Cars[] = [
     favorite: true,
     origins: ['Japan'],
     imageUrl: 'assets/r34.jpg',
-    tags: ['Godzilla'],
+    tags: ['Godzilla', 'Japan'],
   },
   {
     id:'2',
@@ -19,7 +19,7 @@ export const sample_cars: Cars[] = [
     favorite: true,
     origins: ['Japan'],
     imageUrl: 'assets/supra_mk4.jpg',
-    tags: ['Supra'],
+    tags: ['Supra', 'Japan'],
   },
   {
     id:'3',
@@ -29,7 +29,7 @@ export const sample_cars: Cars[] = [
     favorite: true,
     origins: ['Germany'],
     imageUrl: 'assets/m3_e46.jpg',
-    tags: [],
+    tags: ['German'],
   },
   {
     id:'4',
@@ -39,7 +39,7 @@ export const sample_cars: Cars[] = [
     favorite: true,
     origins: ['Germany'],
     imageUrl: 'assets/m5_cs.jpg',
-    tags: ['Monster'],
+    tags: ['Monster', 'German'],
   },
   {
     id:'5',
@@ -49,7 +49,7 @@ export const sample_cars: Cars[] = [
     favorite: true,
     origins: ['Germany'],
     imageUrl: 'assets/amg_gtr.jpg',
-    tags: [],
+    tags: ['German'],
   },
   {
     id:'6',
@@ -59,6 +59,6 @@ export const sample_cars: Cars[] = [
     favorite: false,
     origins: ['Germany'],
     imageUrl: 'assets/rs7.jpg',
-    tags: [],
+    tags: ['German'],
   }
 ]

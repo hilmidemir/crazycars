@@ -1,3 +1,4 @@
+<app-search></app-search>
 <ul>
   <li *ngFor="let car of cars">
     <a routerLink="/cars/{{car.id}}">
@@ -20,11 +21,11 @@
             <span>🕒</span>
             {{car.madeYear}}
           </div>
-          <div class="price">
-            <span>
-              {{car.price | currency}}
-            </span>
-          </div>
+        </div>
+        <div class="price">
+          <span>
+            {{car.price | currency}}
+          </span>
         </div>
       </div>
     </a>
