@@ -1,0 +1,32 @@
+<ul>
+  <li *ngFor="let car of cars">
+    <a routerLink="/cars/{{car.id}}">
+      <!-- we can use both of the style for dynamic datas -->
+      <img src="{{car.imageUrl}}" [alt]="car.name">
+      <div class="content">
+        <div class="name">
+          {{car.name}}
+        </div>
+        <span class="favorite {{car.favorite?'':'not'}}">
+          ❤
+        </span>
+        <div class="produckt-item-footer">
+          <div class="origins">
+            <span *ngFor="let origin of car.origins">
+              {{origin}}
+            </span>
+          </div>
+          <div class="made-year">
+            <span>🕒</span>
+            {{car.madeYear}}
+          </div>
+          <div class="price">
+            <span>
+              {{car.price | currency}}
+            </span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>
