@@ -50,7 +50,7 @@ export const sample_cars: Cars[] = [
     favorite: true,
     origins: ['Germany'],
     imageUrl: 'assets/amg_gtr.jpg',
-    tags: ['German', 'Coupe', 'Sedan'],
+    tags: ['German', 'Coupe'],
   },
   {
     id:'6',
@@ -60,7 +60,7 @@ export const sample_cars: Cars[] = [
     favorite: false,
     origins: ['Germany'],
     imageUrl: 'assets/rs7.jpg',
-    tags: ['German'],
+    tags: ['German', 'Sedan'],
   }
 ]
 

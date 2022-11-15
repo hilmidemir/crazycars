@@ -27,8 +27,11 @@ export class CarService {
 
   getAllCarsByTag(tag:string):Cars[] {
     return tag === "All"? /* if tag equal to "All" run the next code */
-    this.getAll(): /* column(:) means otherwise just start second code  */
+    this.getAll() : /* column(:) means otherwise just start second code  */
     this.getAll().filter(car => car.tags?.includes(tag));
   }
 
+  getCarById(carId: string): Cars {
+    return this.getAll().find(car => car.id == carId) ?? new Cars();
+  }
 }

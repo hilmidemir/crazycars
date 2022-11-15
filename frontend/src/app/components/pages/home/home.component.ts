@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   cars:Cars[] = [];
 
-  constructor(private carService:CarService, activatedRoute:ActivatedRoute) {
+  constructor(private carService: CarService, activatedRoute: ActivatedRoute) {
     activatedRoute.params.subscribe((params) => {
       if(params.searchTerm)
         this.cars = this.carService.getAllCarsBySearchTerm(params.searchTerm);

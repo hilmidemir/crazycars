@@ -57,7 +57,7 @@ li a img {
   flex: 9;
 }
 
-.origins.span {
+.origins span {
   border-radius: 2rem;
   background-color: whitesmoke;
   display: inline-block;

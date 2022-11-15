@@ -1,0 +1,36 @@
+<div class="container">
+  <img [src]="car.imageUrl" [alt]="car.name">
+
+  <div class="details">
+    <div class="header">
+      <span class="name">
+        {{car.name}}
+      </span>
+      <span class="favorite {{car.favorite ? '': 'not'}}">❤</span>
+    </div>
+
+    <div class="origins">
+      <span *ngFor = "let origin of car.origins">
+        {{origin}}
+      </span>
+    </div>
+
+    <div class="tags">
+      <a *ngFor = "let tag of car.tags" routerLink="/tag/{{tag}}">
+        {{tag}}
+      </a>
+    </div>
+
+    <div class="made-year">
+      <span>
+        Made year of <strong>{{car.madeYear}}</strong>
+      </span>
+    </div>
+
+    <div class="price">
+      <span>
+        {{car.price | currency}}
+      </span>
+    </div>
+  </div>
+</div>
