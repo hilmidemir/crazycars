@@ -1,5 +1,5 @@
 import { Cars } from './app/shared/models/Cars';
-import { Tag } from './app/shared/Tag';
+import { Tag } from './app/shared/models/Tag';
 
 export const sample_cars: Cars[] = [
   {

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { sample } from 'rxjs';
 import { sample_cars, sample_tags } from 'src/data';
 import { Cars } from '../shared/models/Cars';
-import { Tag } from '../shared/Tag';
+import { Tag } from '../shared/models/Tag';
 
 
 
