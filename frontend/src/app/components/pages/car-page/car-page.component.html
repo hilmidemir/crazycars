@@ -1,3 +1,9 @@
+<app-not-found>
+  [visible] = "!cars.id"
+  notFoundMessage = "Not Found Cars"
+  resetLinkText = "Back to the Homepage"
+</app-not-found>
+
 <div class="container">
   <img [src]="car.imageUrl" [alt]="car.name">
 
@@ -33,7 +39,7 @@
       </span>
     </div>
 
-    <button (click)="addToCart()"></button>
+    <button (click)="addToCart()">Add to shopping list</button>
 
   </div>
 </div>
