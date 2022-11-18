@@ -22,6 +22,7 @@ export class CarPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // ****
   }
 
   addToCart() {
