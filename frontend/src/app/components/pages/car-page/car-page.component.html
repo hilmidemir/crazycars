@@ -1,10 +1,10 @@
 <app-not-found>
-  [visible] = "!cars.id"
+  [visible] = "!cart || !cart.items.length"
   notFoundMessage = "Not Found Cars"
   resetLinkText = "Back to the Homepage"
 </app-not-found>
 
-<div class="container">
+<div *ngIf="car" class="container">
   <img [src]="car.imageUrl" [alt]="car.name">
 
   <div class="details">

@@ -12,7 +12,9 @@ export class TagsComponent implements OnInit {
   tags?: Tag[];
 
   constructor(carService: CarService) {
-    this.tags = carService.getAllTags();
+    carService.getAllTags().subscribe(serverTags => {
+      this.tags = serverTags;
+    });
   }
 
   ngOnInit(): void {

@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { sample } from 'rxjs';
+import { Observable, sample } from 'rxjs';
 import { sample_cars, sample_tags } from 'src/data';
+import { CARS_BY_ID_URL, CARS_BY_SEARCH_URL, CARS_TAGS_URL, CARS_URL } from '../shared/constants/urls';
 import { Cars } from '../shared/models/Cars';
 import { Tag } from '../shared/models/Tag';
 
@@ -11,27 +13,27 @@ import { Tag } from '../shared/models/Tag';
 })
 export class CarService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  getAll():Cars[] {
-    return sample_cars;
+  getAll(): Observable <Cars[]> {
+    return this.http.get<Cars[]>(CARS_URL);
   }
 
   getAllCarsBySearchTerm(searchTerm: string) {
-    return this.getAll().filter(car => car.name.toLowerCase().includes(searchTerm.toLowerCase()))
+    return this.http.get<Cars[]>(CARS_BY_SEARCH_URL + searchTerm);
   }
 
-  getAllTags():Tag[] {
-    return sample_tags;
+  getAllTags(): Observable <Tag[]> {
+    return this.http.get<Tag[]>(CARS_TAGS_URL);
   }
 
-  getAllCarsByTag(tag:string):Cars[] {
+  getAllCarsByTag(tag:string): Observable <Cars[]> {
     return tag === "All"? /* if tag equal to "All" run the next code */
     this.getAll() : /* column(:) means otherwise just start second code  */
-    this.getAll().filter(car => car.tags?.includes(tag));
+    this.http.get<Cars[]>(CARS_TAGS_URL + tag);
   }
 
-  getCarById(carId: string): Cars {
-    return this.getAll().find(car => car.id == carId) ?? new Cars();
+  getCarById(carId: string): Observable <Cars> {
+    return this.http.get<Cars>(CARS_BY_ID_URL + carId);
   }
 }

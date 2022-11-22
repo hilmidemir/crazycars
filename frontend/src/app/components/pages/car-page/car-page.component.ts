@@ -17,7 +17,9 @@ export class CarPageComponent implements OnInit {
       private cartService: CartService, private router: Router) {
     activatedRoute.params.subscribe((params) => {
       if(params.id)
-        this.car = carService.getCarById(params.id);
+        carService.getCarById(params.id).subscribe(serverCar => {
+          this.car = serverCar;
+        });
     })
   }
 
