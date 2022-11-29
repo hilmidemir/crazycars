@@ -1,41 +1,25 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import express from "express";
 import cors from "cors";
-import { sample_cars, sample_tags } from "./data";
+import carRouter from './routers/car.router'
+import userRouter from './routers/user.router'
+
+import { dbConnect } from './configs/config';
+dbConnect();
 
 const app = express();
+app.use(express.json());
+
 app.use(cors({
   credentials: true,
   origin: ["http://localhost:4200"]
 }));
 
-app.get("/api/cars", (req, res) => {
-  res.send(sample_cars);
-});
+app.use("/api/cars", carRouter);
 
-app.get("/api/cars/search/:searchTerm", (req, res) => {
-  const searchTerm = req.params.searchTerm;
-  const cars = sample_cars
-    .filter(car  => car.name.toLowerCase()
-    .includes(searchTerm.toLocaleLowerCase()));
-  res.send(cars);
-});
-
-app.get("/api/cars/tags", (req, res) => {
-  res.send(sample_tags);
-});
-
-app.get("/api/cars/tag/:tagName", (req, res) => {
-  const tagName = req.params.tagName;
-  const cars = sample_cars
-    .filter(car => car.tags?.includes(tagName));
-  res.send(cars);
-});
-
-app.get("/api/cars/:carId", (req, res) => {
-  const carId = req.params.carId;
-  const car = sample_cars.find(car => car.id == carId);
-  res.send(car);
-});
+app.use("/api/users", userRouter);
 
 const port = 5000;
 app.listen(port, () => {

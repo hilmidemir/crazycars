@@ -27,7 +27,7 @@ export class CarService {
     return this.http.get<Tag[]>(CARS_TAGS_URL);
   }
 
-  getAllCarsByTag(tag:string): Observable <Cars[]> {
+  getAllCarsByTag(tag: string): Observable <Cars[]> {
     return tag === "All"? /* if tag equal to "All" run the next code */
     this.getAll() : /* column(:) means otherwise just start second code  */
     this.http.get<Cars[]>(CARS_TAGS_URL + tag);
