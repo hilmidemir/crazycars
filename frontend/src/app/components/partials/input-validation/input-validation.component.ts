@@ -3,7 +3,10 @@ import { AbstractControl } from '@angular/forms';
 
 const VALIDATORS_MESSAGES: any = {
   required:'Should Not Be Empty',
-  email: 'Email is not valid'
+  email: 'Email is not valid',
+  minlength: 'Field is too short',
+  notMach: 'Password and confirm does not match',
+
 }
 
 @Component({
